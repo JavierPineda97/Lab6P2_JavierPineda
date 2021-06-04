@@ -28,16 +28,29 @@ public class Principal extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlEscritorio = new javax.swing.JDesktopPane();
-        jMenuBar1 = new javax.swing.JMenuBar();
-        menAlumnos = new javax.swing.JMenu();
-        menItemIngresarAlumno = new javax.swing.JMenuItem();
-        menDocentes = new javax.swing.JMenu();
-        menItemIngresarDocentes = new javax.swing.JMenuItem();
-        menItemProyectosDocentes = new javax.swing.JMenuItem();
-        menItemAsignarClaseDocente = new javax.swing.JMenuItem();
-        menItemInformacionDocente = new javax.swing.JMenuItem();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        menIngresarAlumno = new javax.swing.JMenu();
+        menClasesAlumno = new javax.swing.JMenu();
+        menItemMatricularClaseAlumno = new javax.swing.JMenuItem();
+        menItemInfoClaseAlumno = new javax.swing.JMenuItem();
+        menItemProyectoClaseAlumno = new javax.swing.JMenuItem();
+        menInfoAlumno = new javax.swing.JMenu();
+        menItemListarInfoAlumno = new javax.swing.JMenuItem();
+        menItemModificarInfoAlumno = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        menIngresarDocente = new javax.swing.JMenu();
+        menProyectosDocente = new javax.swing.JMenu();
+        menItemCrearProyectoDocentes = new javax.swing.JMenuItem();
+        menItemModificarProyectoDocente = new javax.swing.JMenuItem();
+        menItemListarProyectoDocente = new javax.swing.JMenuItem();
+        menItemAsignarClaseDocente = new javax.swing.JMenu();
+        menItemAsignarseClasesDocente = new javax.swing.JMenuItem();
         menItemVerClasesDocente = new javax.swing.JMenuItem();
-        menAdmins = new javax.swing.JMenu();
+        menInformacionDocente = new javax.swing.JMenu();
+        menItemModificarInformacionDocente = new javax.swing.JMenuItem();
+        menItemListarInformacionDocente = new javax.swing.JMenuItem();
+        jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Ventana Principal");
@@ -54,47 +67,152 @@ public class Principal extends javax.swing.JFrame {
             .addGap(0, 554, Short.MAX_VALUE)
         );
 
-        menAlumnos.setText("Alumnos");
+        jMenu3.setText("Alumno");
 
-        menItemIngresarAlumno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
-        menItemIngresarAlumno.setText("Ingresar");
-        menAlumnos.add(menItemIngresarAlumno);
-
-        jMenuBar1.add(menAlumnos);
-
-        menDocentes.setText("Docentes");
-
-        menItemIngresarDocentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, java.awt.event.InputEvent.ALT_MASK));
-        menItemIngresarDocentes.setText("Ingresar");
-        menDocentes.add(menItemIngresarDocentes);
-
-        menItemProyectosDocentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_MASK));
-        menItemProyectosDocentes.setText("Proyectos");
-        menItemProyectosDocentes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                menItemProyectosDocentesActionPerformed(evt);
+        menIngresarAlumno.setText("Ingresar");
+        menIngresarAlumno.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menIngresarAlumnoMouseClicked(evt);
             }
         });
-        menDocentes.add(menItemProyectosDocentes);
+        jMenu3.add(menIngresarAlumno);
 
-        menItemAsignarClaseDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
-        menItemAsignarClaseDocente.setText("Asignar clase");
-        menDocentes.add(menItemAsignarClaseDocente);
+        menClasesAlumno.setText("Clases");
 
-        menItemInformacionDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK));
-        menItemInformacionDocente.setText("Informacion");
-        menDocentes.add(menItemInformacionDocente);
+        menItemMatricularClaseAlumno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.CTRL_MASK));
+        menItemMatricularClaseAlumno.setText("Matricular");
+        menItemMatricularClaseAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemMatricularClaseAlumnoActionPerformed(evt);
+            }
+        });
+        menClasesAlumno.add(menItemMatricularClaseAlumno);
 
-        menItemVerClasesDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
-        menItemVerClasesDocente.setText("Ver clases");
-        menDocentes.add(menItemVerClasesDocente);
+        menItemInfoClaseAlumno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.CTRL_MASK));
+        menItemInfoClaseAlumno.setText("Informacion");
+        menItemInfoClaseAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemInfoClaseAlumnoActionPerformed(evt);
+            }
+        });
+        menClasesAlumno.add(menItemInfoClaseAlumno);
 
-        jMenuBar1.add(menDocentes);
+        menItemProyectoClaseAlumno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        menItemProyectoClaseAlumno.setText("Proyectos");
+        menItemProyectoClaseAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemProyectoClaseAlumnoActionPerformed(evt);
+            }
+        });
+        menClasesAlumno.add(menItemProyectoClaseAlumno);
 
-        menAdmins.setText("Admins");
-        jMenuBar1.add(menAdmins);
+        jMenu3.add(menClasesAlumno);
 
-        setJMenuBar(jMenuBar1);
+        menInfoAlumno.setText("Informacion");
+
+        menItemListarInfoAlumno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        menItemListarInfoAlumno.setText("Listar informacion");
+        menInfoAlumno.add(menItemListarInfoAlumno);
+
+        menItemModificarInfoAlumno.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_W, java.awt.event.InputEvent.CTRL_MASK));
+        menItemModificarInfoAlumno.setText("Modificar");
+        menInfoAlumno.add(menItemModificarInfoAlumno);
+
+        jMenu3.add(menInfoAlumno);
+
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Docente");
+
+        menIngresarDocente.setText("Ingresar");
+        menIngresarDocente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menIngresarDocenteMouseClicked(evt);
+            }
+        });
+        jMenu4.add(menIngresarDocente);
+
+        menProyectosDocente.setText("Proyectos");
+
+        menItemCrearProyectoDocentes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.ALT_MASK));
+        menItemCrearProyectoDocentes.setText("Crear");
+        menItemCrearProyectoDocentes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemCrearProyectoDocentesActionPerformed(evt);
+            }
+        });
+        menProyectosDocente.add(menItemCrearProyectoDocentes);
+
+        menItemModificarProyectoDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
+        menItemModificarProyectoDocente.setText("Modificar");
+        menItemModificarProyectoDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemModificarProyectoDocenteActionPerformed(evt);
+            }
+        });
+        menProyectosDocente.add(menItemModificarProyectoDocente);
+
+        menItemListarProyectoDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.ALT_MASK));
+        menItemListarProyectoDocente.setText("Listar");
+        menItemListarProyectoDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemListarProyectoDocenteActionPerformed(evt);
+            }
+        });
+        menProyectosDocente.add(menItemListarProyectoDocente);
+
+        jMenu4.add(menProyectosDocente);
+
+        menItemAsignarClaseDocente.setText("Clases");
+
+        menItemAsignarseClasesDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_A, java.awt.event.InputEvent.ALT_MASK));
+        menItemAsignarseClasesDocente.setText("Asignar");
+        menItemAsignarseClasesDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemAsignarseClasesDocenteActionPerformed(evt);
+            }
+        });
+        menItemAsignarClaseDocente.add(menItemAsignarseClasesDocente);
+
+        menItemVerClasesDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_MASK));
+        menItemVerClasesDocente.setText("Ver ");
+        menItemVerClasesDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemVerClasesDocenteActionPerformed(evt);
+            }
+        });
+        menItemAsignarClaseDocente.add(menItemVerClasesDocente);
+
+        jMenu4.add(menItemAsignarClaseDocente);
+
+        menInformacionDocente.setText("Informacion");
+
+        menItemModificarInformacionDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
+        menItemModificarInformacionDocente.setText("Modificar");
+        menItemModificarInformacionDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemModificarInformacionDocenteActionPerformed(evt);
+            }
+        });
+        menInformacionDocente.add(menItemModificarInformacionDocente);
+
+        menItemListarInformacionDocente.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.ALT_MASK));
+        menItemListarInformacionDocente.setText("listar");
+        menItemListarInformacionDocente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menItemListarInformacionDocenteActionPerformed(evt);
+            }
+        });
+        menInformacionDocente.add(menItemListarInformacionDocente);
+
+        jMenu4.add(menInformacionDocente);
+
+        jMenuBar2.add(jMenu4);
+
+        jMenu1.setText("Admin");
+        jMenuBar2.add(jMenu1);
+
+        setJMenuBar(jMenuBar2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -104,18 +222,95 @@ public class Principal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlEscritorio)
+            .addComponent(pnlEscritorio, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void menItemProyectosDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProyectosDocentesActionPerformed
+    private void menItemCrearProyectoDocentesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemCrearProyectoDocentesActionPerformed
         // TODO add your handling code here:
-        crearProyecto verVentana=new crearProyecto();
+        crearProyecto verVentana = new crearProyecto();
         pnlEscritorio.add(verVentana);
         verVentana.show();
-    }//GEN-LAST:event_menItemProyectosDocentesActionPerformed
+    }//GEN-LAST:event_menItemCrearProyectoDocentesActionPerformed
+
+    private void menItemModificarProyectoDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemModificarProyectoDocenteActionPerformed
+        // TODO add your handling code here:
+        modificarProyecto verVentana= new modificarProyecto();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemModificarProyectoDocenteActionPerformed
+
+    private void menItemListarProyectoDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemListarProyectoDocenteActionPerformed
+        // TODO add your handling code here:
+        listaProyectos verVentana= new listaProyectos();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemListarProyectoDocenteActionPerformed
+
+    private void menItemAsignarseClasesDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemAsignarseClasesDocenteActionPerformed
+        // TODO add your handling code here:
+        AsignarClaseDocente verVentana= new AsignarClaseDocente();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemAsignarseClasesDocenteActionPerformed
+
+    private void menItemVerClasesDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemVerClasesDocenteActionPerformed
+        // TODO add your handling code here:
+        VerClasesDocente verVentana=new VerClasesDocente();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemVerClasesDocenteActionPerformed
+
+    private void menItemModificarInformacionDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemModificarInformacionDocenteActionPerformed
+        // TODO add your handling code here:
+        ModificarInfoDocente verVentana= new ModificarInfoDocente();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemModificarInformacionDocenteActionPerformed
+
+    private void menItemListarInformacionDocenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemListarInformacionDocenteActionPerformed
+        // TODO add your handling code here:
+        ListarInfoDocente verVentana= new ListarInfoDocente();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemListarInformacionDocenteActionPerformed
+
+    private void menIngresarDocenteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menIngresarDocenteMouseClicked
+        // TODO add your handling code here:
+        IngresarDocente verVentana=new IngresarDocente();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menIngresarDocenteMouseClicked
+
+    private void menIngresarAlumnoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menIngresarAlumnoMouseClicked
+        // TODO add your handling code here:
+        IngresarAlumno verVentana = new IngresarAlumno();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menIngresarAlumnoMouseClicked
+
+    private void menItemMatricularClaseAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemMatricularClaseAlumnoActionPerformed
+        // TODO add your handling code here:
+        MatricularClasesAlumno verVentana = new MatricularClasesAlumno();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemMatricularClaseAlumnoActionPerformed
+
+    private void menItemInfoClaseAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemInfoClaseAlumnoActionPerformed
+        // TODO add your handling code here:
+        InformacionClasesAlumno verVentana= new InformacionClasesAlumno();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemInfoClaseAlumnoActionPerformed
+
+    private void menItemProyectoClaseAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menItemProyectoClaseAlumnoActionPerformed
+        // TODO add your handling code here:
+        ProyectosClasesAlumnos verVentana = new ProyectosClasesAlumnos();
+        pnlEscritorio.add(verVentana);
+        verVentana.show();
+    }//GEN-LAST:event_menItemProyectoClaseAlumnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,16 +348,29 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenu menAdmins;
-    private javax.swing.JMenu menAlumnos;
-    private javax.swing.JMenu menDocentes;
-    private javax.swing.JMenuItem menItemAsignarClaseDocente;
-    private javax.swing.JMenuItem menItemInformacionDocente;
-    private javax.swing.JMenuItem menItemIngresarAlumno;
-    private javax.swing.JMenuItem menItemIngresarDocentes;
-    private javax.swing.JMenuItem menItemProyectosDocentes;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenu menClasesAlumno;
+    private javax.swing.JMenu menInfoAlumno;
+    private javax.swing.JMenu menInformacionDocente;
+    private javax.swing.JMenu menIngresarAlumno;
+    private javax.swing.JMenu menIngresarDocente;
+    private javax.swing.JMenu menItemAsignarClaseDocente;
+    private javax.swing.JMenuItem menItemAsignarseClasesDocente;
+    private javax.swing.JMenuItem menItemCrearProyectoDocentes;
+    private javax.swing.JMenuItem menItemInfoClaseAlumno;
+    private javax.swing.JMenuItem menItemListarInfoAlumno;
+    private javax.swing.JMenuItem menItemListarInformacionDocente;
+    private javax.swing.JMenuItem menItemListarProyectoDocente;
+    private javax.swing.JMenuItem menItemMatricularClaseAlumno;
+    private javax.swing.JMenuItem menItemModificarInfoAlumno;
+    private javax.swing.JMenuItem menItemModificarInformacionDocente;
+    private javax.swing.JMenuItem menItemModificarProyectoDocente;
+    private javax.swing.JMenuItem menItemProyectoClaseAlumno;
     private javax.swing.JMenuItem menItemVerClasesDocente;
+    private javax.swing.JMenu menProyectosDocente;
     private javax.swing.JDesktopPane pnlEscritorio;
     // End of variables declaration//GEN-END:variables
 }
