@@ -9,13 +9,6 @@ package lab.pkg6progra2;
  *
  * @author Dell
  */
-public class Lab6Progra2 {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
+public class Personas {
     
 }
